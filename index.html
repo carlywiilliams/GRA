@@ -50,6 +50,7 @@ ul li:hover {
 }
 iframe {
     border: 0;
+    margin-top: -130px;
 }
 #home {
     background-image: url(wicked-2024-5.jpg);
@@ -92,8 +93,30 @@ footer {
 	inside the box */
   border-radius: 15px;
 	}
+	
+.video-section {
+  text-align: center; /* this tells everything inside to go in the middle */
+  padding-top: 40px;  /* adds a little space at the top */
+}
+
 .wrapper h2 {
     color: #FFFFFF;
+}
+#location h3 {
+    font-size: 39px;
+    color: #FFFFFF;
+    margin-left: 66px;
+    margin-bottom: -14px;
+}
+#location h4 {
+    color: #FFFFFF;
+    margin-left: 100px;
+    font-size: large;
+}
+#location h5 {
+    color: #FFFFFF;
+    margin-left: 100px;
+    font-size: large;
 }
 </style>
 </head>
@@ -102,13 +125,14 @@ footer {
 	
 <div class="wrapper">
   <h1>Broadway Theater</h1>
-<h2>Tickets on sale now below!</h2>
+
   <header> 
     <nav>
       <ul>
         <li><a href="#home"><img src="wicked-logo.png" width="80" height="80" alt="Wicked logo"/></a></li>
         <li><a href="#media">Media</a></li>
         <li><a href="#location">Location</a></li>
+		  <li><a href="#location">Ticket Sales</a></li>
       </ul>
     </nav>
   </header>
@@ -116,31 +140,34 @@ footer {
  
   <section id="home">
     <div class="calendar-container">
-      <iframe 
-        src="https://calendar.google.com/calendar/embed?src=yourcalendarID&ctz=America/New_York"
+      <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendarID&ctz=America/New_York"
         frameborder="0"
         scrolling="no">
       </iframe>
     </div>
   </section>
- 
+	
 <section id="media">
-  <div class="video-container">
-    <h2>Official Trailer</h2>
+  <div class="video-section">
+    <h2>Trailer Below</h2>
     <iframe width="560" height="315"
       src="https://www.youtube.com/embed/PLQsJFMpENg?si=CvuoMeDDOBDBEk1f&amp;start=2"
-      title="YouTube video player"
-      frameborder="0"
+      title="YouTube video player" frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      referrerpolicy="strict-origin-when-cross-origin"
       allowfullscreen>
     </iframe>
   </div>
 </section>
 
-  
-  <!-- LOCATION SECTION -->
+
   <section id="location">
+	  <h3>Theater Hours</h3>
+    <h4>Monday-Friday
+	  </h4>
+    <h5>12:00pm - 9:00pm</h5>
+    <h4>Saturday - Sunday</h4>
+    <h5>12:00pm - 12:00am</h5>
+
     <div class="map-container" style="text-align:center; padding-top:40px;">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3021.699640384285!2d-73.98525552368094!3d40.76250017138349!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25855a5f3a2ab%3A0xa9d0e66f3b4f7f38!2sGershwin%20Theatre!5e0!3m2!1sen!2sus!4v1697050000000"
