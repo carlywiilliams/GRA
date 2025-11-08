@@ -18,7 +18,7 @@ body {
   font-family: "TAY Basal", "TAY Bea", "TAY Crumb", sans-serif;
 }
 
-
+/* --- Wrapper --- */
 .wrapper {
   width: 1366px;
   margin: auto;
@@ -28,11 +28,13 @@ body {
   background-color: #fff;
 }
 
+/* --- Header / Logo --- */
 .wrapper img {
   display: block;
   margin: 40px auto 20px auto;
 }
 
+/* --- Navigation Bar --- */
 nav {
   text-align: center;
   background-color: #fff;
@@ -60,10 +62,10 @@ nav a {
 }
 
 nav a:hover {
-  color: #892833; 
+  color: #892833; /* SKIMS-like hover accent */
 }
 
-
+/* --- Main Section --- */
 main {
   flex: 1;
   display: flex;
@@ -78,43 +80,66 @@ section {
   vertical-align: top;
 }
 
-
+/* --- Product Section (keep photos together/stacked) --- */
 .product {
   position: relative;
   width: 50%;
+  /* Give the stacked images a real block height so the footer is pushed down */
+  /* Exact height for your current 50% width (≈683px wide with 854x1170 imgs) */
+  min-height: 935px;
+  /* Bonus (modern): keeps correct height even if you change widths later */
+  aspect-ratio: 854 / 1170;
 }
 
 .product img {
   width: 100%;
-  height: auto;
-  position: absolute;
+  height: 100%;
+  position: absolute;  /* keep them stacked in the same spot */
+  inset: 0;            /* fill the product box */
+  object-fit: contain; /* keep image proportions */
 }
 
+/* --- Right column: Description / Buttons --- */
+.descripstion h2 {
+  font-size: 28px;
+  font-weight: 500;
+  margin: 0 0 16px 0;
+}
+
+.descripstion p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 16px 0;
+}
+
+.descripstion ul {
+  margin: 0 0 16px 18px;
+  padding: 0;
+}
+
+.descripstion li {
+  margin-bottom: 8px;
+}
 
 .descripstion button {
   width: 50px;
   height: 50px;
-  margin: 10px;
+  margin: 10px 10px 0 0;
   border-radius: 25px;
   border: medium solid transparent;
   cursor: pointer;
 }
 
-.maroon {
-  background-color: #892833;
-}
-.brown {
-  background-color: #4b3329;
-}
-.white {
-  background-color: #f7f0e6;
-}
+.maroon { background-color: #892833; }
+.brown  { background-color: #4b3329; }
+.white  { background-color: #f7f0e6; }
 
 .descripstion button:hover {
   border-color: black;
 }
 
-
+/* --- Footer --- */
 footer {
   background-color: #000;
   color: #fff;
@@ -157,14 +182,9 @@ function MM_swapImage() { //v3.0
 function MM_showHideLayers() { //v9.0
   var i,p,v,obj,args=MM_showHideLayers.arguments;
   for (i=0; i<(args.length-2); i+=3)
-  with (document)
-    if (getElementById && ((obj=getElementById(args[i]))!=null)) {
-      v=args[i+2];
-      if (obj.style) {
-        obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v;
-      }
-      obj.visibility=v;
-    }
+  with (document) if (getElementById && ((obj=getElementById(args[i]))!=null)) { v=args[i+2];
+    if (obj.style) { obj=obj.style; v=(v=='show')?'visible':(v=='hide')?'hidden':v; }
+    obj.visibility=v; }
 }
 </script>
 </head>
@@ -174,7 +194,7 @@ function MM_showHideLayers() { //v9.0
     <!-- Logo -->
     <img src="skims-logo.png" width="404" height="90" alt="SKIMS Logo"/>
 
-
+    <!-- Navigation Bar -->
     <header>
       <nav>
         <ul>
@@ -187,7 +207,7 @@ function MM_showHideLayers() { //v9.0
       </nav>
     </header>
 
-   
+    <!-- Main Product Section -->
     <main>
       <section class="product">
         <a href="#maroon" onMouseOut="MM_swapImgRestore()" onMouseOver="MM_swapImage('maroon-workout','','maroon-back.png',1)">
@@ -202,25 +222,34 @@ function MM_showHideLayers() { //v9.0
       </section>
 
       <section class="descripstion">
-		  <section class="descripstion">
-  <h2>SKIMS Fits Everybody Collection</h2>
-  <p>
-    Discover ultimate comfort and seamless style with the Fits Everybody line. 
-    Designed with buttery-soft fabric that moves with your body, this set is 
-    perfect for lounging or everyday wear.
-  </p>
-  <p><strong>Price:</strong> $68</p>
+        <!-- ✨ Your descriptive text (right column) -->
+        <h2>Fits Everybody Seamless Set</h2>
+        <p>Buttery-soft, lightweight, and designed to move with you. This everyday set smooths and supports without squeezing.</p>
+        <ul>
+          <li>Second-skin feel; seamless finish</li>
+          <li>Breathable, stretchy fabric</li>
+          <li>Machine washable</li>
+        </ul>
+        <p><strong>Price:</strong> $68</p>
 
-  <button class="maroon" onClick="MM_showHideLayers('maroon-workout','','show','brown-sweatshirt','','hide','white-sweatshirt','','hide')"></button>
-  <button class="white" onClick="MM_showHideLayers('maroon-workout','','hide','brown-sweatshirt','','hide','white-sweatshirt','','show')"></button>
-  <button class="brown" onClick="MM_showHideLayers('maroon-workout','','hide','brown-sweatshirt','','show','white-sweatshirt','','hide')"></button>
-</section> 
-		  </main>
+        <!-- color buttons (unchanged behavior) -->
+        <div>
+          <button class="maroon" onClick="MM_showHideLayers('maroon-workout','','show','brown-sweatshirt','','hide','white-sweatshirt','','hide')" title="Maroon"></button>
+          <button class="white"  onClick="MM_showHideLayers('maroon-workout','','hide','brown-sweatshirt','','hide','white-sweatshirt','','show')"  title="White"></button>
+          <button class="brown"  onClick="MM_showHideLayers('maroon-workout','','hide','brown-sweatshirt','','show','white-sweatshirt','','hide')"  title="Brown"></button>
+        </div>
+      </section>
+    </main>
 
+    <!-- Footer -->
     <footer>
       <p>© 2025 Carly Williams. This is a fictitious web page created solely for the purpose of education and training.  
       All products and people associated with this web page are also fictitious. Any resemblance to real brands, products,  
       or people is purely coincidental.</p>
     </footer>
+  </div>
 </body>
 </html>
+
+
+
