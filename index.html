@@ -21,6 +21,7 @@ wrapper {
     flex-direction: column;  
     min-height: 100vh;
 }
+	
 
 header {
     height: 100px;
@@ -86,6 +87,19 @@ input, select {
     margin: 2px;
     padding: 10px;
 }
+	.videoBox {
+    width: 600px;         
+    margin: 40px auto;     
+    background-color: rgba(255,255,255,0.5);
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.videoBox video {
+    width: 100%;     
+    border-radius: 12px;
+}
+
 	
 footer {
     background-color: rgba(255,255,255,0.75);
@@ -94,7 +108,6 @@ footer {
     padding-left: 15px;
     padding-bottom: 15px;
     font-size: 11px;
-    margin-top: 900px;
 }
 main h2 {
     color: rgba(255,255,255,1.00);
@@ -102,6 +115,10 @@ main h2 {
     text-align: center;
     margin-top: 39px;
     background-color: rgba(0,0,0,0.45);
+}
+#bgVideo source {
+    width: 550px;
+    height: auto;
 }
 </style>
 
@@ -114,6 +131,8 @@ main h2 {
 </head>
 
 <body>
+	
+
 <wrapper>
 <header></header>
 
@@ -209,6 +228,12 @@ main h2 {
 		<input type="submit"
 		class="search" value="Search"></div>
     </div>
+	  <div class="videoBox">
+  <video autoplay muted loop playsinline>
+    <source src="italy.mov" type="video/mp4">
+  </video>
+</div>
+
 	  
   </main>
 
