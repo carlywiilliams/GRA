@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>SVG Rollovers</title>
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background-color:#CCC;
+}
+
+wrapper{
+    width:100%;
+    max-width:1024px;
+    margin:0 auto;
+    display:block;
+}
+
+header{
+    height:150px;
+    background-color:#FFD2FB;
+    font-size:53px;
+    color:#0078AF;
+    font-family:"TAY Basal","TAY Bea","TAY Crumb","TAY Milkbar";
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+main{
+    text-align:center;
+    background-color:#fff;
+    padding:1em 0;
+}
+
+footer{
+    height:80px;
+    background-color:#FFD2FB;
+}
+
+/* ===== SVG ROLLOVER LOGIC ===== */
+
+#segment-apple,
+#segment-banana,
+#segment-orange,
+#segment-grapes{
+    opacity:0;
+    pointer-events:all;
+    transition:opacity 0.3s ease;
+}
+
+#segment-apple:hover,
+#segment-banana:hover,
+#segment-orange:hover,
+#segment-grapes:hover{
+    opacity:1;
+}
+</style>
+</head>
+
+<body>
+<wrapper>
+
+<header>
+    Let’s Go Grocery Shopping
+</header>
+
+<main>
+
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">
+
+<!-- Background -->
+<rect width="1024" height="768" fill="#fcd4f9"/>
+
+<!-- Basket (unchanged) -->
+<rect x="224.25" y="497.18" width="575.49" height="67.71" rx="33.85" ry="33.85" fill="#195877"/>
+<path d="M278.42,564.88h467.16c-20.31,67.71-40.63,135.41-60.93,203.12h-345.29c-20.31-67.71-40.63-135.41-60.93-203.12Z" fill="#2276aa"/>
+
+<!-- ===== FRUIT SEGMENTS ===== -->
+
+<g id="segment-apple">
+    <!-- Apple paths (UNCHANGED) -->
+    <!-- paste your FULL apple paths here -->
+</g>
+
+<g id="segment-banana">
+    <!-- Banana paths (UNCHANGED) -->
+</g>
+
+<g id="segment-orange">
+    <!-- Orange paths (UNCHANGED) -->
+</g>
+
+<g id="segment-grapes">
+    <!-- Grapes paths (UNCHANGED) -->
+</g>
+
+</svg>
+
+</main>
+
+<footer></footer>
+
+</wrapper>
+</body>
+</html>
