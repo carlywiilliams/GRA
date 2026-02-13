@@ -18,14 +18,15 @@ wrapper {
 }
 section {
     text-align: center;
-    padding: 20px;
+    padding: 35px 20px 20px 20px;
     min-height: 450px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start; 
+    align-items: center;
     background-color: #FFD4E3;
-	
 }
+
 
 
 section p {
@@ -36,12 +37,30 @@ section p {
 }
 
 section img {
-    width: 100%;
-    height: auto;
-	
-	
-	
+    width: 320px;
+    height: 320px;
+    object-fit: contain;
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+	
+section:nth-child(odd) img:hover {
+    transform: translateY(-10px) rotate(-5deg);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+}
+
+section:nth-child(even) img:hover {
+    transform: translateY(-10px) rotate(5deg);
+    box-shadow: 0 20px 30px rgba(0,0,0,0.15);
+}
+
+	.sprinkle {
+    width: 290px;
+    height: 290px;
+	margin-top: 30px;
+}
+
 header {
     width: 100%;
     background-color: #F5BCCC;
@@ -94,17 +113,18 @@ main {
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 }
+	
 
 </style>
 </head> <link rel="stylesheet" href="https://use.typekit.net/hxk7ybs.css">
 
 <body>
-	 <header>
+<header>
     <img src="Crumbl-Cookies-Logo-2018.png" width="300" alt="Crumbl Logo"/>
 	<h1>carly's crumbl cookies
-		 </h1>
+  </h1>
 	<h2>valentine's day edition
-		 </h2>
+  </h2>
   <img src="cookies_banner_10x3_ratio.png" width="1536" height="460" alt=""/> </header>
 
 <wrapper>
@@ -115,8 +135,9 @@ main {
 		conversation hearts cookie</p>
 	  </section>
 	  
-<section><img src="heart-sprinkles.png" alt="" width="351" height="351">
-<p>heart sprinkles cookie</p>
+<section> <img class="sprinkle" src="heart-sprinkles.png" alt="">
+<p> heart sprinkles cookie
+	</p>
 	  </section>
     
     <section><img src="pink-cake.png" alt="" width="351" height="351">
