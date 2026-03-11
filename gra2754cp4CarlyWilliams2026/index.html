@@ -1,0 +1,146 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome | Carly Williams, 2026</title>
+	<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.typekit.net/zty3hxq.css">
+
+<style type="text/css">
+body {
+    margin: 0;
+}
+wrapper {
+    width: 80%;
+    margin: auto;
+    display: block;
+}
+header {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-image: url(header-image.png);
+}
+nav {
+    background-color: #000000;
+}
+nav ul a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "alga", serif;
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 0px;
+}
+	
+#about {
+    height: 375px;
+    background-color: #FFFFFF;
+    background-image: url(about-page-xl.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+	
+#gallery {
+    background-color: #FFFFFF;
+    height: 375px;
+    background-image: url(services-page.png);
+	background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+#gallery .fa-camera {
+    height: 250px;
+    width: auto;
+}
+#contact {
+    height: 375px;
+    background-color: #A1E071;
+}
+ul a li {
+    padding: 10px;
+    list-style-type: none;
+    letter-spacing: 0px;
+}
+ul a li:hover {
+    background-color: #B6A8A8;
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+footer {
+    height: 600px;
+}
+	.topnav.responsive a{
+    display:block;
+}
+.topnav.responsive a:not(:first-child) {
+     display: none;
+}
+	.topnav .fa-times {
+    display: block;
+		padding:10px;
+		color:white;
+}
+.topnav .fa-bars {
+    display: none;
+}
+.topnav.responsive .fa-times {
+    display: none;
+}
+.topnav.responsive .fa-bars {
+    display: block;
+	padding: 10px;
+	color:white;
+}
+#gallery .photoshop  {
+    height: 50px;
+    width: auto;
+}
+
+@media (min-width:600px) {
+.topnav a:not(:first-child),.topnav.responsive a:not(:first-child) {
+    display:inline-block;
+     }
+.topnav .icon {
+     display:none;
+     }
+}
+</style>
+	<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</head>
+
+<body>
+<wrapper>
+  <header></header>
+  <nav class="topnav" id="myTopnav">
+  <a href="javascript:void(0);" class="icon"
+     onclick="myFunction()">
+  <i class="fa fa-bars"></i><i class="fa fa-times"></i>
+    <ul>
+      <a href="#about"><li>about</li></a>
+     <a href="#gallery"> <li>services</li></a>
+      <a href="#contact"><li>contact</li></a>
+    </ul> </a>
+  </nav>
+  <div id="about"> </div>
+<section id="gallery"><img src="photoshop-logo.png" alt="" width="3840" height="2160" class="photoshop"/><img src="camera.png" alt="" width="800" height="800" class="fa-camera"/></section>
+<section id="contact"></section>
+  <footer></footer>
+</wrapper>
+</body>
+</html>
