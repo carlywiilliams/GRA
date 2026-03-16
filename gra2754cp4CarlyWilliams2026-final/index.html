@@ -1,0 +1,317 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Welcome | Carly Williams, 2026</title>
+	<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://use.typekit.net/zty3hxq.css">
+
+<style type="text/css">
+body {
+    margin: 0;
+}
+wrapper {
+    width: 80%;
+    margin: auto;
+    display: block;
+	padding-top:40px;
+}
+header {
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+    background-image: url(header-image.png);
+}
+nav {
+    background-color: #000000;
+}
+nav ul a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family: "alga", serif;
+    font-style: italic;
+    font-weight: lighter;
+    letter-spacing: 0px;
+}
+	
+#about {
+    height: 375px;
+    background-color: #FFFFFF;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+	}
+	
+.about-container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    width:80%;
+    margin:auto;
+    gap:40px;
+}
+
+.about-text{
+    flex: 1;
+    font-family: alga;
+}
+
+.about-photo{
+    flex:1;
+    text-align:center;
+}
+
+.about-photo img{
+    max-width:100%;
+    height:auto;
+    border-radius:10px;
+}
+
+	
+#gallery{
+    background-color: #FFFFFF;
+    height: 375px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    display: grid;
+    grid-template-columns: 150px 150px;
+    gap: 10px;
+    justify-content: center;
+    align-content: start;
+    margin: auto;
+    padding-top: 80px;
+	
+}
+	
+	
+#services{
+    padding:60px 0;
+    text-align:center;
+}
+
+#services h2{
+    font-family:"alga", serif;
+}
+
+.service-box h3{
+    font-family:"alga", serif;
+    font-weight:500;
+}
+
+.service-box p{
+    font-family:"alga", serif;
+    font-size:14px;
+}
+
+.services-container{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+/* SERVICE BOX */
+
+.service-box{
+    width:200px;
+    padding:25px;
+    background:#f5f5f5;
+    border-radius:10px;
+    text-align:center;
+}
+	
+#contact{
+    padding:80px 0;
+    text-align:center;
+    font-family:"alga", serif;
+}
+
+.contact-box{
+    max-width:450px;
+    width:90%;
+    margin:auto;
+    padding:40px;
+    background:#f5f5f5;
+    border-radius:10px;
+}
+
+.contact-email{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.contact-email a{
+    text-decoration:none;
+    color:black;
+}
+
+.social-icons a{
+    margin:0 20px;
+    font-size:40px;
+    color:black;
+    text-decoration:none;
+}
+.social-icons a:hover{
+    color:#B6A8A8;
+}
+ul a li {
+    padding: 10px;
+    list-style-type: none;
+    letter-spacing: 0px;
+}
+	
+ul a li:hover {
+    background-color: #B6A8A8;
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+footer {
+    height: 200px;
+	font-family:"alga", serif;
+	
+}
+	.topnav.responsive a{
+    display:block;
+}
+.topnav.responsive a:not(:first-child) {
+     display: none;
+}
+	.topnav .fa-times {
+    display: block;
+		padding:10px;
+		color:white;
+}
+.topnav .fa-bars {
+    display: none;
+}
+.topnav.responsive .fa-times {
+    display: none;
+}
+.topnav.responsive .fa-bars {
+    display: block;
+	padding: 10px;
+	color:white;
+}
+
+@media (min-width:600px) {
+.topnav a:not(:first-child),.topnav.responsive a:not(:first-child) {
+    display:inline-block;
+     }
+.topnav .icon {
+     display:none;
+     }
+}
+</style>
+	<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>
+
+</head>
+
+<body>
+<wrapper>
+  <header></header>
+  <nav class="topnav" id="myTopnav">
+  <a href="javascript:void(0);" class="icon"
+     onclick="myFunction()">
+  <i class="fa fa-bars"></i><i class="fa fa-times"></i>
+    <ul>
+      <a href="#about"><li>about</li></a>
+     <a href="#gallery"> <li>services</li></a>
+      <a href="#contact"><li>contact</li></a>
+    </ul> </a>
+  </nav>
+	<section class="about-container">
+
+    <div class="about-text">
+        <h2>About Me</h2>
+        <p>
+     I’m a 23-year-old graphic designer currently completing my Associate’s Degree in Graphic Design, which I will be graduating with this May. Over the past two years, I’ve developed a strong foundation in design and visual storytelling while gaining experience working with Adobe programs including Photoshop, Illustrator, InDesign, Dreamweaver, Lightroom, and After Effects. Alongside my studies, I’m starting a small creative business where I combine crafting, design, and photography, while also exploring photo editing and visual content creation. This upcoming summer, I will be interning at my mom’s law firm, working closely with their marketing team to help develop and manage social media content. My long-term dream is to work for a leading publication such as Vogue or Architectural Digest, where I can combine my passion for design, branding, and visual storytelling in a creative and editorial environment.
+        </p>
+    </div>
+
+<div class="about-photo">
+  <img src="headshot.png" alt="Carly headshot">
+</div>
+
+</section>
+	<section id="services">
+    
+<h2>Services I Offer</h2>
+
+<div class="services-container">
+
+<div class="service-box">
+<i class="fa fa-paint-brush"></i>
+<h3>Graphic Design</h3>
+<p>Logos, branding, and visual identity design.</p>
+</div>
+
+<div class="service-box">
+<i class="fa fa-camera"></i>
+<h3>Photography</h3>
+<p>Product photography and creative shoots.</p>
+</div>
+
+<div class="service-box">
+<i class="fa fa-desktop"></i>
+<h3>Web Design</h3>
+<p>Responsive websites built with HTML and CSS.</p>
+</div>
+
+<div class="service-box">
+<i class="fa fa-image"></i>
+<h3>Photo Editing</h3>
+<p>Professional retouching and Lightroom edits.</p>
+</div>
+
+</div>
+</section>
+	
+<section id="contact">
+
+<h2>Contact Me</h2>
+
+<div class="contact-box">
+
+<p class="contact-email">
+<a href="mailto:carly@email.com">carlyraecre8ive@gmail.com</a>
+</p>
+
+<div class="social-icons">
+
+<a href="https://instagram.com/yourusername" target="_blank">
+<i class="fa fa-instagram"></i>
+</a>
+
+<a href="https://linkedin.com/in/yourusername" target="_blank">
+<i class="fa fa-linkedin"></i>
+</a>
+
+<a href="https://tiktok.com/@yourusername" target="_blank">
+<i class="fa fa-music"></i>
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+  <footer> © 2026, Carly Williams
+This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.</footer>
+</wrapper>
+</body>
+</html>
