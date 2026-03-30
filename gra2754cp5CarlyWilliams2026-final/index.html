@@ -1,0 +1,322 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Make a Matcha | Carly Williams, 2026</title>
+
+<style>
+
+body {
+    margin: 0;
+    text-align: center;
+    font-family: sans-serif;
+    background-color: #94DCE3;
+}
+
+h1 {
+    margin-top: 50px;
+    color: white;
+    font-size: 50px;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+footer {
+    font-size: small;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+    color: #FFFFFF;
+    margin-top: 55px;
+}
+
+.layer,
+.strawberry-piece,
+.ice {
+    pointer-events: none;
+}
+
+#cup {
+    width: 230px;
+    height: 360px;
+    margin-top: 79px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+#glass {
+    width: 100%;
+    height: 100%;
+    border: 3px solid rgba(0,0,0,0.7);
+    border-top: none;
+    border-radius: 0 0 100px 100px;
+    position: absolute;
+    top: 20px;
+    overflow: hidden;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+    transition: 0.6s;
+}
+
+#glass::after {
+    content: "";
+    position: absolute;
+    left: 20px;
+    top: 40px;
+    width: 40px;
+    height: 220px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 50px;
+}
+
+#rim {
+    width: 100%;
+    height: 40px;
+    border: 3px solid rgba(0,0,0,0.7);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    background: rgba(255,255,255,0.2);
+    z-index: 5;
+}
+
+#straw {
+    width: 12px;
+    height: 380px;
+    background: linear-gradient(white, #ddd);
+    position: absolute;
+    top: -120px;
+    left: 166px;
+    transform: rotate(15deg);
+    border-radius: 10px;
+    z-index: 6;
+    margin-top: 49px;
+}
+
+.layer {
+    position: absolute;
+    width: 100%;
+    transition: 0.5s ease;
+    border-radius: 0;
+}
+
+#strawberryLayer {
+    background:#ff8aa0;
+    border-radius: 0 0 100px 100px;
+}
+
+#milkLayer { background:rgba(255,255,255,0.85); }
+#matchaLayer { background:#6b8e23; }
+
+.strawberry-piece {
+    width: 14px;
+    position: absolute;
+}
+
+.ice {
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(rgba(255,255,255,0.9), rgba(180,220,255,0.5));
+    border-radius: 6px;
+    position: absolute;
+}
+
+.blend {
+    animation: blendDrink 1s ease forwards;
+}
+
+@keyframes blendDrink {
+    0% { filter: blur(0px); }
+    50% { filter: blur(10px); }
+    100% { filter: blur(0px); }
+}
+
+
+#ingredients {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+}
+
+.ingredient {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -13px;
+}
+
+.step {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+    transition: 0.3s;
+    font-family: Consolas, "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", Monaco, "Courier New", monospace;
+}
+
+.step.active {
+    color: deeppink;
+    transform: scale(1.2);
+}
+
+#ingredients img {
+    width: 120px;
+    cursor: grab;
+}
+
+</style>
+
+<script>
+
+let totalHeight = 0;
+
+function drag(ev) {
+  ev.dataTransfer.setData("text", ev.currentTarget.id);
+}
+
+function allowDrop(ev) {
+  ev.preventDefault();
+}
+
+function drop(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+
+  if (data === "strawberry") {
+      addLayer("strawberryLayer", 60, true);
+      highlightStep(0);
+  }
+
+  if (data === "milk") {
+      addLayer("milkLayer", 60);
+      highlightStep(1);
+  }
+
+  if (data === "matcha") {
+      addLayer("matchaLayer", 60);
+      highlightStep(2);
+  }
+
+  if (data === "ice") {
+      addIce();
+      highlightStep(3);
+      finalBlend();
+  }
+}
+
+function addLayer(id, amount, fruit=false) {
+    let layer = document.getElementById(id);
+
+    layer.style.height = amount + "px";
+    layer.style.bottom = totalHeight + "px";
+
+    totalHeight += amount;
+
+    if (fruit) addStrawberries();
+}
+
+function addStrawberries() {
+    let glass = document.getElementById("glass");
+
+    for (let i = 0; i < 6; i++) {
+        let img = document.createElement("img");
+        img.src = "strawberry.png";
+        img.classList.add("strawberry-piece");
+
+        img.style.left = Math.random()*160 + "px";
+        img.style.bottom = Math.random()*60 + "px";
+
+        glass.appendChild(img);
+    }
+}
+
+function addIce() {
+    let glass = document.getElementById("glass");
+
+    for (let i = 0; i < 3; i++) {
+        let ice = document.createElement("div");
+        ice.classList.add("ice");
+
+        ice.style.left = (30 + i*50) + "px";
+        ice.style.top = (20 + Math.random()*30) + "px";
+
+        glass.appendChild(ice);
+    }
+}
+
+function finalBlend() {
+
+    let glass = document.getElementById("glass");
+
+    glass.classList.add("blend");
+
+    setTimeout(() => {
+
+        glass.style.background = `
+        linear-gradient(
+            to bottom,
+            #6b8e23 0%,
+            #7fa33a 25%,
+            #e9e4d8 55%,
+            #f5b2bd 80%,
+            #ff8aa0 100%
+        )`;
+        document.getElementById("strawberryLayer").style.opacity = "0";
+        document.getElementById("milkLayer").style.opacity = "0";
+        document.getElementById("matchaLayer").style.opacity = "0";
+
+    }, 600);
+}
+
+function highlightStep(index) {
+    let steps = document.querySelectorAll(".step");
+
+    steps.forEach(step => step.classList.remove("active"));
+    steps[index].classList.add("active");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<h1>MAKE A STRAWBERRY MATCHA!</h1>
+
+<div id="cup" ondrop="drop(event)" ondragover="allowDrop(event)">
+  <div id="straw"></div>
+    <div id="rim"></div>
+
+    <div id="glass">
+        <div id="strawberryLayer" class="layer"></div>
+        <div id="milkLayer" class="layer"></div>
+        <div id="matchaLayer" class="layer"></div>
+    </div>
+</div>
+
+<div id="ingredients">
+
+    <div class="ingredient">
+        <div class="step">STEP 1</div>
+        <img src="strawberry.png" id="strawberry" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    <div class="ingredient">
+        <div class="step">STEP 2</div>
+        <img src="milk.png" id="milk" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    <div class="ingredient">
+        <div class="step">STEP 3</div>
+        <img src="matcha.png" id="matcha" draggable="true" ondragstart="drag(event)">
+    </div>
+
+    <div class="ingredient">
+        <div class="step">STEP 4</div>
+        <img src="ice.png" id="ice" draggable="true" ondragstart="drag(event)">
+    </div>
+
+</div>
+<footer>
+	© 2026, Carly Williams
+This is a fictitious web page created solely for the purpose of education and training. All products and people associated with this web page are also fictitious. Any resemblance to real brands, products, or people is purely coincidental. Information provided about the product is also fictitious and should not be construed to be representative of actual products on the market in a similar product category.
+	</footer>
+</body>
+</html>
